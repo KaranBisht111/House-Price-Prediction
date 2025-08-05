@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>House Price Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>House Price Prediction</h1>
+        <form action="/predict" method="POST">
+            <div class="input-container">
+                <label for="location">Location:</label>
+                <select name="location" id="location" required>
+                    <option value="">Select Location</option>
+                    {% for loc in locations %}
+                        <option value="{{ loc }}">{{ loc }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="input-container">
+                <label for="sqft">Area (sqft):</label>
+                <input type="number" name="sqft" id="sqft" required>
+            </div>
+            <div class="input-container">
+                <label for="bath">Number of Bathrooms:</label>
+                <input type="number" name="bath" id="bath" required>
+            </div>
+            <div class="input-container">
+                <label for="bhk">Number of Bedrooms:</label>
+                <input type="number" name="bhk" id="bhk" required>
+            </div>
+            <button type="submit">Predict Price</button>
+        </form>
+    </div>
+</body>
+</html>

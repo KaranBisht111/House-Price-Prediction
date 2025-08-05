@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predicted House Price</h1>
+
+        <div class="input-summary">
+            <p><strong>Location:</strong> {{ location }}</p>
+            <p><strong>Area (sqft):</strong> {{ sqft }}</p>
+            <p><strong>Bathrooms:</strong> {{ bath }}</p>
+            <p><strong>Bedrooms (BHK):</strong> {{ bhk }}</p>
+        </div>
+
+        <div class="prediction">
+            <h2>{{ prediction_text }}</h2>
+        </div>
+
+        <div style="text-align:center; margin-top: 20px;">
+            <a href="/" style="text-decoration: none; color: white;">
+                <button>Make Another Prediction</button>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
